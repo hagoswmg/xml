@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c17c0baa-97c6-473e-8302-9d1c9fd7ae44",
+		"_postman_id": "6d751f23-3969-4991-b7b7-2ccda1958c67",
 		"name": "XML to POJO Mapper",
 		"description": "Serialize to XML and Deserialize to POJO Templates",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -45,16 +45,25 @@
 					},
 					"response": [
 						{
-							"name": "OK",
+							"name": "get Product Xml",
 							"originalRequest": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "\"sunt in laboris aliquip Duis\"",
+									"raw": "   <Product>\r\n        <identifier>190296136610</identifier>\r\n        <identifierTypeCode>GPID</identifierTypeCode>\r\n        <statusCode>IN_CAR</statusCode>\r\n        <statusValue>Y</statusValue>\r\n        <createdBy>CAR</createdBy>\r\n        <createDate>2022-05-09 09:53:51.0</createDate>\r\n        <lastUpdatedBy>CAR</lastUpdatedBy>\r\n        <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>\r\n    </Product>",
 									"options": {
 										"raw": {
-											"language": "json"
+											"language": "xml"
 										}
 									}
 								},
@@ -76,10 +85,26 @@
 								{
 									"key": "Content-Type",
 									"value": "application/xml"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 May 2022 20:42:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
 								}
 							],
 							"cookie": [],
-							"body": "<element>\n</element>"
+							"body": "<Product>\n    <identifier>190296136610</identifier>\n    <identifierTypeCode>GPID</identifierTypeCode>\n    <statusCode>IN_CAR</statusCode>\n    <statusValue>Y</statusValue>\n    <createdBy>CAR</createdBy>\n    <createDate>2022-05-09 09:53:51.0</createDate>\n    <lastUpdatedBy>CAR</lastUpdatedBy>\n    <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>\n</Product>"
 						}
 					]
 				},
@@ -164,7 +189,7 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json"
+								"value": "application/xml"
 							},
 							{
 								"key": "Accept",
@@ -173,10 +198,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<productstatus>\r\n    <Product>\r\n        <identifier>190296136610</identifier>\r\n        <identifierTypeCode>GPID</identifierTypeCode>\r\n        <statusCode>IN_CAR</statusCode>\r\n        <statusValue>Y</statusValue>\r\n        <createdBy>CAR</createdBy>\r\n        <createDate>2022-05-09 09:53:51.0</createDate>\r\n        <lastUpdatedBy>CAR</lastUpdatedBy>\r\n        <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>\r\n    </Product>\r\n    <Product>\r\n        <identifier>190296136610</identifier>\r\n        <identifierTypeCode>GPID</identifierTypeCode>\r\n        <statusCode>IN_CAR</statusCode>\r\n        <statusValue>Y</statusValue>\r\n        <createdBy>CAR</createdBy>\r\n        <createDate>2022-05-09 09:53:51.0</createDate>\r\n        <lastUpdatedBy>CAR</lastUpdatedBy>\r\n        <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>\r\n    </Product>\r\n    <Product>\r\n        <identifier>190296136610</identifier>\r\n        <identifierTypeCode>GPID</identifierTypeCode>\r\n        <statusCode>IN_CAR</statusCode>\r\n        <statusValue>Y</statusValue>\r\n        <createdBy>CAR</createdBy>\r\n        <createDate>2022-05-09 09:53:51.0</createDate>\r\n        <lastUpdatedBy>CAR</lastUpdatedBy>\r\n        <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>\r\n    </Product>\r\n</productstatus>",
+							"raw": "<productStatus>\r\n    <product>\r\n        <identifier>$identifer</identifier>\r\n        <identifierTypeCode>GPID</identifierTypeCode>\r\n        <statusCode>IN_CAR</statusCode>\r\n        <statusValue>Y</statusValue>\r\n        <createdBy>CAR</createdBy>\r\n        <createDate>somedate</createDate>\r\n        <lastUpdatedBy>CAR</lastUpdatedBy>\r\n        <lastUpdateDate>someotherdate</lastUpdateDate>\r\n    </product>\r\n    <product>\r\n        <identifier>$identifer</identifier>\r\n        <identifierTypeCode>GPID</identifierTypeCode>\r\n        <statusCode>IN_CAR</statusCode>\r\n        <statusValue>Y</statusValue>\r\n        <createdBy>CAR</createdBy>\r\n        <createDate>somedate</createDate>\r\n        <lastUpdatedBy>CAR</lastUpdatedBy>\r\n        <lastUpdateDate>someotherdate</lastUpdateDate>\r\n    </product>\r\n    <product>\r\n        <identifier>$identifer</identifier>\r\n        <identifierTypeCode>GPID</identifierTypeCode>\r\n        <statusCode>IN_CAR</statusCode>\r\n        <statusValue>Y</statusValue>\r\n        <createdBy>CAR</createdBy>\r\n        <createDate>somedate</createDate>\r\n        <lastUpdatedBy>CAR</lastUpdatedBy>\r\n        <lastUpdateDate>someotherdate</lastUpdateDate>\r\n    </product>\r\n</productStatus>",
 							"options": {
 								"raw": {
-									"language": "json"
+									"language": "xml"
 								}
 							}
 						},
@@ -236,6 +261,154 @@
 		{
 			"name": "catalog",
 			"item": [
+				{
+					"name": "get Catalog Asset",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "        <catalog_asset>\r\n            <asset_id>202668222</asset_id>\r\n            <asset_type>FULL_LENGTH</asset_type>\r\n            <asset_identifier>054391916716</asset_identifier>\r\n            <asset_subidentifier>US-X9P-20-14799</asset_subidentifier>\r\n            <identifier_type_code>UPC_ISRC</identifier_type_code>\r\n            <description></description>\r\n            <format>WAV</format>\r\n            <format_version>WAVE_FORMAT_PCM</format_version>\r\n            <asset_name>054391916716_US-X9P-20-14799_44_16.wav</asset_name>\r\n            <asset_location>/05439/1916/054391916716/</asset_location>\r\n            <asset_size>69722734</asset_size>\r\n            <registered_date>2022-04-27 00:15:00.0</registered_date>\r\n            <registered_by>2</registered_by>\r\n            <asset_super_type>AUDIO</asset_super_type>\r\n            <gar_location>http://dmdoas.prod.wmg.com:7400/camprod/gar_asset.asset_serve</gar_location>\r\n            <gar_location_type>DERIVED</gar_location_type>\r\n            <publicity_usable_flag></publicity_usable_flag>\r\n            <asset_checksum>b8da25519e5e39eb2655ce1d9bb4ab69</asset_checksum>\r\n            <asset_sec_status></asset_sec_status>\r\n            <on_tape_update_date></on_tape_update_date>\r\n            <original_registered_date>2022-04-27 00:15:00.0</original_registered_date>\r\n            <registered_user>Kavitha</registered_user>\r\n            <original_registered_user>Kavitha</original_registered_user>\r\n        </catalog_asset>",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/catalog/catalog-asset",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"catalog-asset"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"sunt in laboris aliquip Duis\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/catalog/catalog-asset",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"catalog",
+										"catalog-asset"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "\"<element>\\n</element>\""
+						}
+					]
+				},
+				{
+					"name": "get Catalog Asset List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<list>\r\n    <catalog_asset>\r\n        <asset_id>202668221</asset_id>\r\n        <asset_type>FULL_LENGTH</asset_type>\r\n        <asset_identifier>054391916716</asset_identifier>\r\n        <asset_subidentifier>QZ-93L-21-25957</asset_subidentifier>\r\n        <identifier_type_code>UPC_ISRC</identifier_type_code>\r\n        <description></description>\r\n        <format>WAV</format>\r\n        <format_version>WAVE_FORMAT_PCM</format_version>\r\n        <asset_name>054391916716_QZ-93L-21-25957_44_16.wav</asset_name>\r\n        <asset_location>/05439/1916/054391916716/</asset_location>\r\n        <asset_size>69722734</asset_size>\r\n        <registered_date>2022-04-27 00:15:00.0</registered_date>\r\n        <registered_by>2</registered_by>\r\n        <asset_super_type>AUDIO</asset_super_type>\r\n        <gar_location>http://dmdoas.prod.wmg.com:7400/camprod/gar_asset.asset_serve</gar_location>\r\n        <gar_location_type>DERIVED</gar_location_type>\r\n        <publicity_usable_flag></publicity_usable_flag>\r\n        <asset_checksum>b8da25519e5e39eb2655ce1d9bb4ab69</asset_checksum>\r\n        <asset_sec_status></asset_sec_status>\r\n        <on_tape_update_date></on_tape_update_date>\r\n        <original_registered_date>2022-04-27 00:15:00.0</original_registered_date>\r\n        <registered_user>Kavitha</registered_user>\r\n        <original_registered_user>Kavitha</original_registered_user>\r\n    </catalog_asset>\r\n    <catalog_asset>\r\n        <asset_id>202668221</asset_id>\r\n        <asset_type>FULL_LENGTH</asset_type>\r\n        <asset_identifier>054391916716</asset_identifier>\r\n        <asset_subidentifier>QZ-93L-21-25957</asset_subidentifier>\r\n        <identifier_type_code>UPC_ISRC</identifier_type_code>\r\n        <description></description>\r\n        <format>WAV</format>\r\n        <format_version>WAVE_FORMAT_PCM</format_version>\r\n        <asset_name>054391916716_QZ-93L-21-25957_44_16.wav</asset_name>\r\n        <asset_location>/05439/1916/054391916716/</asset_location>\r\n        <asset_size>69722734</asset_size>\r\n        <registered_date>2022-04-27 00:15:00.0</registered_date>\r\n        <registered_by>2</registered_by>\r\n        <asset_super_type>AUDIO</asset_super_type>\r\n        <gar_location>http://dmdoas.prod.wmg.com:7400/camprod/gar_asset.asset_serve</gar_location>\r\n        <gar_location_type>DERIVED</gar_location_type>\r\n        <publicity_usable_flag></publicity_usable_flag>\r\n        <asset_checksum>b8da25519e5e39eb2655ce1d9bb4ab69</asset_checksum>\r\n        <asset_sec_status></asset_sec_status>\r\n        <on_tape_update_date></on_tape_update_date>\r\n        <original_registered_date>2022-04-27 00:15:00.0</original_registered_date>\r\n        <registered_user>Kavitha</registered_user>\r\n        <original_registered_user>Kavitha</original_registered_user>\r\n    </catalog_asset>\r\n</list>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/catalog/catalog-asset-list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"catalog-asset-list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"sunt in laboris aliquip Duis\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/catalog/catalog-asset-list",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"catalog",
+										"catalog-asset-list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "\"<element>\\n</element>\""
+						}
+					]
+				},
 				{
 					"name": "get Catalog Audio Asset",
 					"request": {
@@ -311,152 +484,58 @@
 					]
 				},
 				{
-					"name": "get Catalog Asset",
+					"name": "get Full Audio Asset",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/xml"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\"sunt in laboris aliquip Duis\"",
+							"raw": "    <asset>\r\n        <catalog_asset>\r\n            <asset_id>202668222</asset_id>\r\n            <asset_type>FULL_LENGTH</asset_type>\r\n            <asset_identifier>054391916716</asset_identifier>\r\n            <asset_subidentifier>US-X9P-20-14799</asset_subidentifier>\r\n            <identifier_type_code>UPC_ISRC</identifier_type_code>\r\n            <description></description>\r\n            <format>WAV</format>\r\n            <format_version>WAVE_FORMAT_PCM</format_version>\r\n            <asset_name>054391916716_US-X9P-20-14799_44_16.wav</asset_name>\r\n            <asset_location>/05439/1916/054391916716/</asset_location>\r\n            <asset_size>69722734</asset_size>\r\n            <registered_date>2022-04-27 00:15:00.0</registered_date>\r\n            <registered_by>2</registered_by>\r\n            <asset_super_type>AUDIO</asset_super_type>\r\n            <gar_location>http://dmdoas.prod.wmg.com:7400/camprod/gar_asset.asset_serve</gar_location>\r\n            <gar_location_type>DERIVED</gar_location_type>\r\n            <publicity_usable_flag></publicity_usable_flag>\r\n            <asset_checksum>b8da25519e5e39eb2655ce1d9bb4ab69</asset_checksum>\r\n            <asset_sec_status></asset_sec_status>\r\n            <on_tape_update_date></on_tape_update_date>\r\n            <original_registered_date>2022-04-27 00:15:00.0</original_registered_date>\r\n            <registered_user>Kavitha</registered_user>\r\n            <original_registered_user>Kavitha</original_registered_user>\r\n        </catalog_asset>\r\n        <catalog_audio_asset>\r\n            <asset_id>202668222</asset_id>\r\n            <bitrate>176</bitrate>\r\n            <sampling_frequency>44.1</sampling_frequency>\r\n            <bit_depth>16</bit_depth>\r\n            <watermark></watermark>\r\n            <channels>2</channels>\r\n            <header_type>RIFF</header_type>\r\n            <audio_mode>STEREO</audio_mode>\r\n            <duration>395.253</duration>\r\n            <head_zero_gap>N</head_zero_gap>\r\n            <tail_zero_gap>N</tail_zero_gap>\r\n            <qc_status>P</qc_status>\r\n            <qc_complete_date>2022-04-27 00:14:47.0</qc_complete_date>\r\n            <encoding_type>FIXED</encoding_type>\r\n            <sbr_interval></sbr_interval>\r\n            <sbr_offset></sbr_offset>\r\n            <mqs>N</mqs>\r\n            <hook_in>43</hook_in>\r\n            <series></series>\r\n        </catalog_audio_asset>\r\n    </asset>",
 							"options": {
 								"raw": {
-									"language": "json"
+									"language": "xml"
 								}
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/catalog/catalog-asset",
+							"raw": "{{baseUrl}}/catalog/full-audio-asset",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"catalog",
-								"catalog-asset"
+								"full-audio-asset"
 							]
 						}
 					},
-					"response": [
-						{
-							"name": "OK",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "\"sunt in laboris aliquip Duis\"",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/catalog/catalog-asset",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"catalog",
-										"catalog-asset"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "\"<element>\\n</element>\""
-						}
-					]
+					"response": []
 				},
 				{
-					"name": "get Catalog Asset List",
+					"name": "get Full Audio Asset LIst",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/xml"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\"sunt in laboris aliquip Duis\"",
+							"raw": "<assets>\r\n    <asset>\r\n        <catalog_asset>\r\n            <asset_id>202668222</asset_id>\r\n            <asset_type>FULL_LENGTH</asset_type>\r\n            <asset_identifier>054391916716</asset_identifier>\r\n            <asset_subidentifier>US-X9P-20-14799</asset_subidentifier>\r\n            <identifier_type_code>UPC_ISRC</identifier_type_code>\r\n            <description></description>\r\n            <format>WAV</format>\r\n            <format_version>WAVE_FORMAT_PCM</format_version>\r\n            <asset_name>054391916716_US-X9P-20-14799_44_16.wav</asset_name>\r\n            <asset_location>/05439/1916/054391916716/</asset_location>\r\n            <asset_size>69722734</asset_size>\r\n            <registered_date>2022-04-27 00:15:00.0</registered_date>\r\n            <registered_by>2</registered_by>\r\n            <asset_super_type>AUDIO</asset_super_type>\r\n            <gar_location>http://dmdoas.prod.wmg.com:7400/camprod/gar_asset.asset_serve</gar_location>\r\n            <gar_location_type>DERIVED</gar_location_type>\r\n            <publicity_usable_flag></publicity_usable_flag>\r\n            <asset_checksum>b8da25519e5e39eb2655ce1d9bb4ab69</asset_checksum>\r\n            <asset_sec_status></asset_sec_status>\r\n            <on_tape_update_date></on_tape_update_date>\r\n            <original_registered_date>2022-04-27 00:15:00.0</original_registered_date>\r\n            <registered_user>Kavitha</registered_user>\r\n            <original_registered_user>Kavitha</original_registered_user>\r\n        </catalog_asset>\r\n        <catalog_audio_asset>\r\n            <asset_id>202668222</asset_id>\r\n            <bitrate>176</bitrate>\r\n            <sampling_frequency>44.1</sampling_frequency>\r\n            <bit_depth>16</bit_depth>\r\n            <watermark></watermark>\r\n            <channels>2</channels>\r\n            <header_type>RIFF</header_type>\r\n            <audio_mode>STEREO</audio_mode>\r\n            <duration>395.253</duration>\r\n            <head_zero_gap>N</head_zero_gap>\r\n            <tail_zero_gap>N</tail_zero_gap>\r\n            <qc_status>P</qc_status>\r\n            <qc_complete_date>2022-04-27 00:14:47.0</qc_complete_date>\r\n            <encoding_type>FIXED</encoding_type>\r\n            <sbr_interval></sbr_interval>\r\n            <sbr_offset></sbr_offset>\r\n            <mqs>N</mqs>\r\n            <hook_in>43</hook_in>\r\n            <series></series>\r\n        </catalog_audio_asset>\r\n    </asset>\r\n    <asset>\r\n        <catalog_asset>\r\n            <asset_id>202668221</asset_id>\r\n            <asset_type>FULL_LENGTH</asset_type>\r\n            <asset_identifier>054391916716</asset_identifier>\r\n            <asset_subidentifier>QZ-93L-21-25957</asset_subidentifier>\r\n            <identifier_type_code>UPC_ISRC</identifier_type_code>\r\n            <description></description>\r\n            <format>WAV</format>\r\n            <format_version>WAVE_FORMAT_PCM</format_version>\r\n            <asset_name>054391916716_QZ-93L-21-25957_44_16.wav</asset_name>\r\n            <asset_location>/05439/1916/054391916716/</asset_location>\r\n            <asset_size>69722734</asset_size>\r\n            <registered_date>2022-04-27 00:15:00.0</registered_date>\r\n            <registered_by>2</registered_by>\r\n            <asset_super_type>AUDIO</asset_super_type>\r\n            <gar_location>http://dmdoas.prod.wmg.com:7400/camprod/gar_asset.asset_serve</gar_location>\r\n            <gar_location_type>DERIVED</gar_location_type>\r\n            <publicity_usable_flag></publicity_usable_flag>\r\n            <asset_checksum>b8da25519e5e39eb2655ce1d9bb4ab69</asset_checksum>\r\n            <asset_sec_status></asset_sec_status>\r\n            <on_tape_update_date></on_tape_update_date>\r\n            <original_registered_date>2022-04-27 00:15:00.0</original_registered_date>\r\n            <registered_user>Kavitha</registered_user>\r\n            <original_registered_user>Kavitha</original_registered_user>\r\n        </catalog_asset>\r\n        <catalog_audio_asset>\r\n            <asset_id>202668221</asset_id>\r\n            <bitrate>176</bitrate>\r\n            <sampling_frequency>44.1</sampling_frequency>\r\n            <bit_depth>16</bit_depth>\r\n            <watermark></watermark>\r\n            <channels>2</channels>\r\n            <header_type>RIFF</header_type>\r\n            <audio_mode>STEREO</audio_mode>\r\n            <duration>395.253</duration>\r\n            <head_zero_gap>N</head_zero_gap>\r\n            <tail_zero_gap>N</tail_zero_gap>\r\n            <qc_status>P</qc_status>\r\n            <qc_complete_date>2022-04-27 00:14:47.0</qc_complete_date>\r\n            <encoding_type>FIXED</encoding_type>\r\n            <sbr_interval></sbr_interval>\r\n            <sbr_offset></sbr_offset>\r\n            <mqs>N</mqs>\r\n            <hook_in>43</hook_in>\r\n            <series></series>\r\n        </catalog_audio_asset>\r\n    </asset>\r\n</assets>",
 							"options": {
 								"raw": {
-									"language": "json"
+									"language": "xml"
 								}
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/catalog/catalog-asset-list",
+							"raw": "{{baseUrl}}/catalog/full-audio-asset-list",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"catalog",
-								"catalog-asset-list"
+								"full-audio-asset-list"
 							]
 						}
 					},
-					"response": [
-						{
-							"name": "OK",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "\"sunt in laboris aliquip Duis\"",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/catalog/catalog-asset-list",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"catalog",
-										"catalog-asset-list"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "\"<element>\\n</element>\""
-						}
-					]
+					"response": []
 				}
 			]
 		}
