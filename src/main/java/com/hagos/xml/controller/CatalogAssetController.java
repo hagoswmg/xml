@@ -1,9 +1,7 @@
 package com.hagos.xml.controller;
 
 import com.hagos.xml.Utils;
-import com.hagos.xml.model.asset.CatalogAsset;
-import com.hagos.xml.model.asset.CatalogAssetList;
-import com.hagos.xml.model.asset.CatalogAudioAsset;
+import com.hagos.xml.model.asset.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -34,5 +32,17 @@ public class CatalogAssetController {
     @PostMapping(path="/catalog-asset-list", produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> getCatalogAssetList(@RequestBody String assetStr) {
         return ResponseEntity.ok(Utils.getObject4StringPayload(assetStr, CatalogAssetList.class));
+    }
+
+    // full-audio-asset
+    @PostMapping(path="/full-audio-asset", produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<?> getFullAudioAsset(@RequestBody String assetStr) {
+        return ResponseEntity.ok(Utils.getObject4StringPayload(assetStr, FullAudioAsset.class));
+    }
+
+    // full-audio-asset-list
+    @PostMapping(path="/full-audio-asset-list", produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<?> getFullAudioAssetList(@RequestBody String assetStr) {
+        return ResponseEntity.ok(Utils.getObject4StringPayload(assetStr, FullAudioAssetList.class));
     }
 }
