@@ -1,0 +1,471 @@
+{
+	"info": {
+		"_postman_id": "c17c0baa-97c6-473e-8302-9d1c9fd7ae44",
+		"name": "XML to POJO Mapper",
+		"description": "Serialize to XML and Deserialize to POJO Templates",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "get Product Xml",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "   <Product>\r\n        <identifier>190296136610</identifier>\r\n        <identifierTypeCode>GPID</identifierTypeCode>\r\n        <statusCode>IN_CAR</statusCode>\r\n        <statusValue>Y</statusValue>\r\n        <createdBy>CAR</createdBy>\r\n        <createDate>2022-05-09 09:53:51.0</createDate>\r\n        <lastUpdatedBy>CAR</lastUpdatedBy>\r\n        <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>\r\n    </Product>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/product/product-xml",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product",
+								"product-xml"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"sunt in laboris aliquip Duis\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/product/product-xml",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"product",
+										"product-xml"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/xml"
+								}
+							],
+							"cookie": [],
+							"body": "<element>\n</element>"
+						}
+					]
+				},
+				{
+					"name": "get Product Both",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "   <Product>\r\n        <identifier>190296136610</identifier>\r\n        <identifierTypeCode>GPID</identifierTypeCode>\r\n        <statusCode>IN_CAR</statusCode>\r\n        <statusValue>Y</statusValue>\r\n        <createdBy>CAR</createdBy>\r\n        <createDate>2022-05-09 09:53:51.0</createDate>\r\n        <lastUpdatedBy>CAR</lastUpdatedBy>\r\n        <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>\r\n    </Product>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/product/product-xml-or-json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product",
+								"product-xml-or-json"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"sunt in laboris aliquip Duis\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/product/product-xml-or-json",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"product",
+										"product-xml-or-json"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "\"<element>\\n</element>\""
+						}
+					]
+				},
+				{
+					"name": "get Product Status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<productstatus>\r\n    <Product>\r\n        <identifier>190296136610</identifier>\r\n        <identifierTypeCode>GPID</identifierTypeCode>\r\n        <statusCode>IN_CAR</statusCode>\r\n        <statusValue>Y</statusValue>\r\n        <createdBy>CAR</createdBy>\r\n        <createDate>2022-05-09 09:53:51.0</createDate>\r\n        <lastUpdatedBy>CAR</lastUpdatedBy>\r\n        <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>\r\n    </Product>\r\n    <Product>\r\n        <identifier>190296136610</identifier>\r\n        <identifierTypeCode>GPID</identifierTypeCode>\r\n        <statusCode>IN_CAR</statusCode>\r\n        <statusValue>Y</statusValue>\r\n        <createdBy>CAR</createdBy>\r\n        <createDate>2022-05-09 09:53:51.0</createDate>\r\n        <lastUpdatedBy>CAR</lastUpdatedBy>\r\n        <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>\r\n    </Product>\r\n    <Product>\r\n        <identifier>190296136610</identifier>\r\n        <identifierTypeCode>GPID</identifierTypeCode>\r\n        <statusCode>IN_CAR</statusCode>\r\n        <statusValue>Y</statusValue>\r\n        <createdBy>CAR</createdBy>\r\n        <createDate>2022-05-09 09:53:51.0</createDate>\r\n        <lastUpdatedBy>CAR</lastUpdatedBy>\r\n        <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>\r\n    </Product>\r\n</productstatus>",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/product/product-status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product",
+								"product-status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"sunt in laboris aliquip Duis\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/product/product-status",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"product",
+										"product-status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "\"<element>\\n</element>\""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "catalog",
+			"item": [
+				{
+					"name": "get Catalog Audio Asset",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\"sunt in laboris aliquip Duis\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/catalog/catalog-audio-asset",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"catalog-audio-asset"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"sunt in laboris aliquip Duis\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/catalog/catalog-audio-asset",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"catalog",
+										"catalog-audio-asset"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "\"<element>\\n</element>\""
+						}
+					]
+				},
+				{
+					"name": "get Catalog Asset",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\"sunt in laboris aliquip Duis\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/catalog/catalog-asset",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"catalog-asset"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"sunt in laboris aliquip Duis\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/catalog/catalog-asset",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"catalog",
+										"catalog-asset"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "\"<element>\\n</element>\""
+						}
+					]
+				},
+				{
+					"name": "get Catalog Asset List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\"sunt in laboris aliquip Duis\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/catalog/catalog-asset-list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"catalog",
+								"catalog-asset-list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"sunt in laboris aliquip Duis\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/catalog/catalog-asset-list",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"catalog",
+										"catalog-asset-list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "\"<element>\\n</element>\""
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:9020",
+			"type": "string"
+		}
+	]
+}
