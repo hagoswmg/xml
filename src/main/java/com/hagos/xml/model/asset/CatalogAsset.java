@@ -1,9 +1,35 @@
 package com.hagos.xml.model.asset;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Data;
 
 
+@JsonPropertyOrder({
+        "assetId",
+        "assetType",
+        "assetIdentifier",
+        "assetSubidentifier",
+        "identifierTypeCode",
+        "description",
+        "format",
+        "formatVersion",
+        "assetName",
+        "assetLocation",
+        "assetSize",
+        "registeredDate",
+        "registeredBy",
+        "assetSuperType",
+        "garLocation",
+        "garLocationType",
+        "publicityUsableFlag",
+        "assetChecksum",
+        "assetSecStatus",
+        "onTapeUpdateDate",
+        "originalRegisteredDate",
+        "registeredUser",
+        "originalRegisteredUser"
+})
 @Data
 public class CatalogAsset {
     @JacksonXmlProperty(localName = "asset_id")

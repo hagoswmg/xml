@@ -1,26 +1,32 @@
 <productstatus>
-    <product>
-        <identifier>1</identifier>
+    <Product>
+        <identifier>190296136610</identifier>
         <identifierTypeCode>GPID</identifierTypeCode>
         <statusCode>IN_CAR</statusCode>
         <statusValue>Y</statusValue>
         <createdBy>CAR</createdBy>
-        <updatedBy>CAR</updatedBy>
-    </product>
-    <product>
-        <identifier>2</identifier>
+        <createDate>2022-05-09 09:53:51.0</createDate>
+        <lastUpdatedBy>CAR</lastUpdatedBy>
+        <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>
+    </Product>
+    <Product>
+        <identifier>190296136610</identifier>
         <identifierTypeCode>GPID</identifierTypeCode>
         <statusCode>IN_CAR</statusCode>
         <statusValue>Y</statusValue>
         <createdBy>CAR</createdBy>
-        <updatedBy>CAR</updatedBy>
-    </product>
-    <product>
-        <identifier>3</identifier>
+        <createDate>2022-05-09 09:53:51.0</createDate>
+        <lastUpdatedBy>CAR</lastUpdatedBy>
+        <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>
+    </Product>
+    <Product>
+        <identifier>190296136610</identifier>
         <identifierTypeCode>GPID</identifierTypeCode>
         <statusCode>IN_CAR</statusCode>
         <statusValue>Y</statusValue>
         <createdBy>CAR</createdBy>
-        <updatedBy>CAR</updatedBy>
-    </product>
+        <createDate>2022-05-09 09:53:51.0</createDate>
+        <lastUpdatedBy>CAR</lastUpdatedBy>
+        <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>
+    </Product>
 </productstatus>

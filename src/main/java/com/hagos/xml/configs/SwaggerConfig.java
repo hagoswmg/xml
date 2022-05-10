@@ -15,16 +15,16 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .info(
                         new Info()
-                                .title("WMG New Release API")
-                                .description("WMG New Release API Documentations")
+                                .title("XML to POJO Mapper")
+                                .description("Serialize to XML and Deserialize to POJO Templates")
                                 .version("1.0.0")
                                 .license(new License()
                                         .name("WMG License")
-                                        .url("https://www.wmg.com")))
+                                        .url("https://www.hagos.com")))
                 .externalDocs(
                         new ExternalDocumentation()
-                                .description("New Release Schedule Documentation")
-                                .url("https://confluence.wmg.com/display/DMD/New+Release+Schedule+Documentation")
+                                .description("Jackson XML Project")
+                                .url("https://github.com/FasterXML/jackson-dataformat-xml")
                 );
     }
 }
