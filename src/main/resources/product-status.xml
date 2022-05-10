@@ -1,0 +1,10 @@
+<productstatus>
+    <product>
+        <identifier>$identifer</identifier>
+        <identifierTypeCode>GPID</identifierTypeCode>
+        <statusCode>IN_CAR</statusCode>
+        <statusValue>Y</statusValue>
+        <createdBy>CAR</createdBy>
+        <updatedBy>CAR</updatedBy>
+    </product>
+</productstatus>
