@@ -40,9 +40,9 @@ public class CatalogAssetController {
         return ResponseEntity.ok(Utils.getObject4StringPayload(assetStr, FullAudioAsset.class));
     }
 
-    // full-audio-asset-list
-    @PostMapping(path="/full-audio-asset-list", produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<?> getFullAudioAssetList(@RequestBody String assetStr) {
-        return ResponseEntity.ok(Utils.getObject4StringPayload(assetStr, FullAudioAssetList.class));
+    // full-audio-asset-list, full-graphic-asset-list, and full-video-asset-list
+    @PostMapping(path="/full-anytype-asset-list", produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<?> getAssetList(@RequestBody String assetStr) {
+        return ResponseEntity.ok(Utils.getObject4StringPayload(assetStr, FullGenericAssetList.class));
     }
 }
