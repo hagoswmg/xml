@@ -1,12 +1,10 @@
 <productstatus>
-    <Product>
-        <identifier>190296136610</identifier>
+    <product>
+        <identifier>$identifer</identifier>
         <identifierTypeCode>GPID</identifierTypeCode>
         <statusCode>IN_CAR</statusCode>
         <statusValue>Y</statusValue>
         <createdBy>CAR</createdBy>
-        <createDate>2022-05-09 09:53:51.0</createDate>
-        <lastUpdatedBy>CAR</lastUpdatedBy>
-        <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>
-    </Product>
+        <updatedBy>CAR</updatedBy>
+    </product>
 </productstatus>

@@ -1,5 +1,6 @@
 package com.hagos.xml.model.product;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Data;
 
 /**
@@ -14,6 +15,16 @@ import lombok.Data;
  <lastUpdateDate>2022-05-09 09:53:51.0</lastUpdateDate>
  </product>
  */
+@JsonPropertyOrder({
+        "identifier",
+        "statusValue",
+        "createdBy",
+        "createDate",
+        "lastUpdatedBy",
+        "identifierTypeCode",
+        "statusCode",
+        "lastUpdateDate"
+})
 @Data
 public class Product {
     private String identifier;
