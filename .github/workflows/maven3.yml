@@ -1,7 +1,7 @@
 #Deploy's job
 deploy:
   #Depends on build's job
-  needs: build
+  needs: maven2
   name: Deploy
   #Run on Ubuntu using the latest version
   runs-on: ubuntu-latest
