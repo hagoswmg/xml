@@ -1,4 +1,4 @@
-name: DMD-API-COMMON CI/CD Pipeline
+name: DMD-API-COMMON CI/CD Pipeline Testing 
 on:
   push:
     branches:
