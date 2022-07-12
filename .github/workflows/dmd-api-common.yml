@@ -81,4 +81,8 @@ jobs:
           --description "commit-sha-${{ github.sha }}"
 
       - name: Deploy new ElasticBeanstalk Application Version
-        run: aws elasticbeanstalk update-environment --environment-name dmdapicommon-env-1 --version-label "ver-${{ github.sha }}"
+        run: |
+          aws elasticbeanstalk create-environment \
+          --application-name dmdapicommon \
+          --environment-name dmdapicommon-env-1 \
+          --version-label "ver-${{ github.sha }}"
