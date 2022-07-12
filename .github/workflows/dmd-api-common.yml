@@ -74,10 +74,10 @@ jobs:
       - name: Create new ElasticBeanstalk Application Version
         run: |
           aws elasticbeanstalk create-application-version \
-          --application-name XmlApp \
+          --application-name dmdapicommon \
           --source-bundle S3Bucket="xml-deployment-s3-bucket",S3Key="dmdapicommon-0.0.1-SNAPSHOT.jar" \
           --version-label "ver-${{ github.sha }}" \
           --description "commit-sha-${{ github.sha }}"
 
       - name: Deploy new ElasticBeanstalk Application Version
-        run: aws elasticbeanstalk update-environment --environment-name XmlApp-env-1 --version-label "ver-${{ github.sha }}"
+        run: aws elasticbeanstalk update-environment --environment-name dmdapicommon-env-1 --version-label "ver-${{ github.sha }}"
