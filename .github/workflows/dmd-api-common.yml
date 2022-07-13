@@ -29,27 +29,6 @@ jobs:
           name: artifact
           path: target/dmdapicommon-0.0.1-SNAPSHOT.jar
 
-  # deploy:
-  #   needs: build
-  #   name: Deploy
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Download JAR
-  #       uses: actions/download-artifact@v2
-  #       with:
-  #         name: artifact
-  #     - name: Deploy to EB
-  #       uses: einaregilsson/beanstalk-deploy@v13
-  #       with:
-  #         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  #         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #         region: ${{ secrets.AWS_REGION }}
-  #         use_existing_version_if_available: false
-  #         application_name: DMD-API-COMMON
-  #         environment_name: Dmdapicommon-env
-  #         version_label: ${{github.SHA}}
-  #         deployment_package: dmdapicommon-0.0.1-SNAPSHOT.jar
-
   deploy:
     name: Deploy
     needs: build
