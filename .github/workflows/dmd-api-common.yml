@@ -48,15 +48,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: "us-west-1"
 
-      - name: Upload package to S3 bucket
-        run: aws s3 cp dmdapicommon-0.0.1-SNAPSHOT.jar s3://xml-deployment-s3-bucket/
-
       - name: Create New ElasticBeanstalk Application Version
         run: |
           aws elasticbeanstalk create-application-version \
           --application-name dmdapicommon \
           --auto-create-application \
-          --source-bundle S3Bucket="xml-deployment-s3-bucket",S3Key="dmdapicommon-0.0.1-SNAPSHOT.jar" \
           --version-label "ver-${{ github.sha }}" \
           --description "commit-sha-${{ github.sha }}"
 
