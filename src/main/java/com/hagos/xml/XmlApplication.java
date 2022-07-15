@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class XmlApplication {
 
 	public static void main(String[] args) {
+		final String APPLICATION_PORT = System.getenv("PORT");
 		SpringApplication.run(XmlApplication.class, args);
+		System.out.println("APPLICATION_PORT = " + APPLICATION_PORT);
 	}
 
 }
