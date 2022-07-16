@@ -39,7 +39,7 @@ jobs:
       - name: Set branch name
         id: setvars
         run: echo "::set-output name=branch_name::${GITHUB_REF##*/}"
-      - name: set database parameters
+      - name: Set Database Parameters
         run: |
           echo "APPLICATION_PORT=$(echo ${{secrets.PORT}})" >> $GITHUB_ENV
           echo "DB_URL=$(echo ${{secrets.DB_URL}})" >> $GITHUB_ENV
