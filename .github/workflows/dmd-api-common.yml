@@ -30,6 +30,8 @@ jobs:
           path: target/dmdapicommon-0.0.1-SNAPSHOT.jar
 
   init:
+    name: Init
+    environment: development
     runs-on: ubuntu-latest
     outputs:
       branch_name: ${{ steps.setvars.outputs.branch_name }}
@@ -39,9 +41,12 @@ jobs:
         run: echo "::set-output name=branch_name::${GITHUB_REF##*/}"
       - name: set database parameters
         run: |
+          echo "APPLICATION_PORT=$(echo ${secrets.PORT})" >> $GITHUB_ENV
           echo "DB_URL=$(echo ${secrets.DB_URL})" >> $GITHUB_ENV
           echo "DB_USERNAME=$(echo ${secrets.DB_USERNAME})" >> $GITHUB_ENV
           echo "DB_PASSWORD=$(echo ${secrets.DB_PASSWORD})" >> $GITHUB_ENV
+          
+          echo "APPLICATION_PORT = ${{ env.PORT }}"
           echo "DB_URL = ${{ env.DB_URL }}"
           echo "DB_USERNAME = ${{ env.DB_USERNAME }}"
           echo "DB_PASSWORD = ${{ env.DB_PASSWORD }}"
