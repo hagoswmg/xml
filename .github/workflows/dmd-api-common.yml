@@ -29,10 +29,27 @@ jobs:
           name: artifact
           path: target/dmdapicommon-0.0.1-SNAPSHOT.jar
 
+  init:
+    runs-on: ubuntu-latest
+    outputs:
+      branch_name: ${{ steps.setvars.outputs.branch_name }}
+    steps:
+      - name: Set branch name
+        id: setvars
+        run: echo "::set-output name=branch_name::${GITHUB_REF##*/}"
+      - name: set database parameters
+        run: |
+          echo "DB_URL=$(echo ${secrets.DB_URL})" >> $GITHUB_ENV
+          echo "DB_USERNAME=$(echo ${secrets.DB_USERNAME})" >> $GITHUB_ENV
+          echo "DB_PASSWORD=$(echo ${secrets.DB_PASSWORD})" >> $GITHUB_ENV
+          echo "DB_URL = ${{ env.DB_URL }}"
+          echo "DB_USERNAME = ${{ env.DB_USERNAME }}"
+          echo "DB_PASSWORD = ${{ env.DB_PASSWORD }}"
+
   deploy:
     name: Deploy
     environment: development
-    needs: build
+    needs: [build, init]
     runs-on: ubuntu-latest
 
     steps:
