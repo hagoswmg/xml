@@ -15,7 +15,7 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .info(
                         new Info()
-                                .title("WMG New Release API")
+                                .title("Release Deployment Test Area")
                                 .description("WMG New Release API Documentations")
                                 .version("1.0.0")
                                 .license(new License()
