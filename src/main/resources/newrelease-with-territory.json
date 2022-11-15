@@ -9,6 +9,16 @@
     "security": 0,
     "timedRelease": "N",
     "bundleOnly": "N",
+    "comments": [
+      {
+        "comment": "Amazon Kindle Version.",
+        "type": "Common Schedule Comment"
+      },
+      {
+        "comment": "Amazon Kindle Version.",
+        "type": "Label Schedule Comment"
+      }
+    ],
     "territories": [
       {
         "isoCodes": [

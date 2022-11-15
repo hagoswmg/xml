@@ -3,7 +3,6 @@ package com.hagos.xml.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.hagos.xml.model.newrelease.ReleaseSchedule;
 import com.hagos.xml.model.newrelease.ReleaseScheduleWrapper;
-import com.hagos.xml.model.product.Product;
 import com.hagos.xml.util.Utils;
 import lombok.extern.java.Log;
 import org.springframework.http.MediaType;
@@ -37,6 +36,10 @@ public class NewReleaseController {
      *         "comment": "Amazon Kindle Version.",
      *         "type": "Label Schedule Comment"
      *       }
+     *     ],
+     *     territories: [
+     *          {},
+     *          {}
      *     ]
      *   }
      * }
@@ -47,7 +50,8 @@ public class NewReleaseController {
         try {
             final ReleaseScheduleWrapper releaseScheduleWrapper = Utils.getObject4JsonPayload(payload, ReleaseScheduleWrapper.class);
             final ReleaseSchedule releaseSchedule = releaseScheduleWrapper.getReleaseSchedule();
-            return ResponseEntity.ok(releaseSchedule);
+
+            return ResponseEntity.status(201).body(releaseSchedule);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
             return null;
