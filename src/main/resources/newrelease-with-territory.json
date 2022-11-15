@@ -1,0 +1,114 @@
+{
+  "ReleaseSchedule": {
+    "sender": "WMG",
+    "override": "N",
+    "gpid": "A10302B00001049072",
+    "label": "BMG Rights Management GmbH",
+    "preorderPreview": "N",
+    "ogrd": "2018-06-29Z",
+    "security": 0,
+    "timedRelease": "N",
+    "bundleOnly": "N",
+    "territories": [
+      {
+        "isoCodes": [
+          "AD"
+        ],
+        "distributor": "ADA Global",
+        "marketingLabel": "BMG Rights Management GmbH",
+        "scheduleType": "ALL",
+        "streetDateTime": "2018-07-20T00:00:00.000+00:00",
+        "pricing": [
+          {
+            "priceCode": "M01"
+          }
+        ],
+        "schedBy": "CRENGAN",
+        "tracks": [
+          {
+            "trackInfo": [
+              {
+                "isrc": "USWB10503714",
+                "trackNumber": 1
+              }
+            ],
+            "trackLevelStreetDateTime": "2018-07-20T00:00:00.000+00:00",
+            "preorderOnly": "N",
+            "forSaleAsTrack": "Y",
+            "pricing": [
+              {
+                "priceCode": "M01"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "isoCodes": [
+          "AE"
+        ],
+        "distributor": "ADA Global",
+        "marketingLabel": "BMG Rights Management GmbH",
+        "scheduleType": "ALL",
+        "streetDateTime": "2018-07-20T00:00:00.000+00:00",
+        "pricing": [
+          {
+            "priceCode": "M01"
+          }
+        ],
+        "schedBy": "CRENGAN",
+        "tracks": [
+          {
+            "trackInfo": [
+              {
+                "isrc": "USWB10503714",
+                "trackNumber": 1
+              }
+            ],
+            "trackLevelStreetDateTime": "2018-07-20T00:00:00.000+00:00",
+            "preorderOnly": "N",
+            "forSaleAsTrack": "Y",
+            "pricing": [
+              {
+                "priceCode": "M01"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "isoCodes": [
+          "AF"
+        ],
+        "distributor": "ADA Global",
+        "marketingLabel": "BMG Rights Management GmbH",
+        "scheduleType": "ALL",
+        "streetDateTime": "2018-07-20T00:00:00.000+00:00",
+        "pricing": [
+          {
+            "priceCode": "M01"
+          }
+        ],
+        "schedBy": "CRENGAN",
+        "tracks": [
+          {
+            "trackInfo": [
+              {
+                "isrc": "USWB10503714",
+                "trackNumber": 1
+              }
+            ],
+            "trackLevelStreetDateTime": "2018-07-20T00:00:00.000+00:00",
+            "preorderOnly": "N",
+            "forSaleAsTrack": "Y",
+            "pricing": [
+              {
+                "priceCode": "M01"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
