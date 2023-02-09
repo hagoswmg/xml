@@ -1,8 +1,9 @@
 package com.hagos.xml.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.hagos.xml.model.newrelease.ReleaseSchedule;
-import com.hagos.xml.model.newrelease.ReleaseScheduleWrapper;
+import com.hagos.xml.model.claims.AccountChannel;
+import com.hagos.xml.model.claims.ReleaseSchedule;
+import com.hagos.xml.model.claims.ReleaseScheduleWrapper;
 import com.hagos.xml.util.Utils;
 import lombok.extern.java.Log;
 import org.springframework.http.MediaType;
@@ -19,10 +20,10 @@ public class NewReleaseClaimsController {
     /**
      {
          "ReleaseSchedule": {
-         "sender": "WMG",
-         "gpid": "A10302B00056347472",
-         "itemLabel": "Atlantic Records",
-                 "accountChannels": {
+             "sender": "WMG",
+             "gpid": "A10302B00056347472",
+             "itemLabel": "Atlantic Records",
+             "accountChannels": [{
                  "accountName": "YouTube",
                  "channelDisplayName": "DustyMcFlyTV",
                  "visibility": "NO CHANGE",
@@ -36,13 +37,13 @@ public class NewReleaseClaimsController {
                  "scheduledBy": "Hagos, Getachew",
                  "distributor": "ADA US",
                  "streetDate": "05/11/2020"
-                 }
+             }]
          }
      }
      */
-    @PostMapping(path="newreleaseinfo/{gpid}", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<?> getNewReleasePayload(@RequestBody String payload, @PathVariable String gpid) {
-        log.info(String.format("[/newreleaseinfo/%s] POST endpoint invoked", gpid));
+    @PostMapping(path="newreleaseclaims/{gpid}", produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<?> getNewReleaseClaimsPayload(@RequestBody String payload, @PathVariable String gpid) {
+        log.info(String.format("[/newreleaseclaims/%s] POST endpoint invoked", gpid));
         try {
             final ReleaseScheduleWrapper releaseScheduleWrapper = Utils.getObject4JsonPayload(payload, ReleaseScheduleWrapper.class);
             final ReleaseSchedule releaseSchedule = releaseScheduleWrapper.getReleaseSchedule();
@@ -50,7 +51,19 @@ public class NewReleaseClaimsController {
             return ResponseEntity.status(201).body(releaseSchedule);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
-            return null;
+            return ResponseEntity.status(400).body(e.getMessage());
+        }
+    }
+
+    @PostMapping(path="newreleaseclaims/achannel", produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<?> getAccountChannelPayload(@RequestBody String payload) {
+        log.info("[/newreleaseclaims/achannel] POST endpoint invoked");
+        try {
+            AccountChannel accountChannel = Utils.getObject4JsonPayload(payload, AccountChannel.class);
+            return ResponseEntity.status(201).body(accountChannel);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(400).body(e.getMessage());
         }
     }
 }

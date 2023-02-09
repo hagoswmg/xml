@@ -16,33 +16,33 @@ import org.springframework.web.bind.annotation.RestController;
 @Log
 public class NewReleaseController {
 
-    /**
-     * {
-     *   "ReleaseSchedule": {
-     *     "sender": "WMG",
-     *     "override": "N",
-     *     "gpid": "9781937655037",
-     *     "label": "Warner Records",
-     *     "preorderPreview": "N",
-     *     "ogrd": "2008-09-30Z",
-     *     "timedRelease": "N",
-     *     "bundleOnly": "N",
-     *     "comments": [
-     *       {
-     *         "comment": "Amazon Kindle Version.",
-     *         "type": "Common Schedule Comment"
-     *       },
-     *       {
-     *         "comment": "Amazon Kindle Version.",
-     *         "type": "Label Schedule Comment"
-     *       }
-     *     ],
-     *     territories: [
-     *          {},
-     *          {}
-     *     ]
-     *   }
-     * }
+    /*
+{
+  "ReleaseSchedule": {
+    "sender": "WMG",
+    "override": "N",
+    "gpid": "9781937655037",
+    "label": "Warner Records",
+    "preorderPreview": "N",
+    "ogrd": "2008-09-30Z",
+    "timedRelease": "N",
+    "bundleOnly": "N",
+    "comments": [
+      {
+        "comment": "Amazon Kindle Version.",
+        "type": "Common Schedule Comment"
+      },
+      {
+        "comment": "Amazon Kindle Version.",
+        "type": "Label Schedule Comment"
+      }
+    ],
+    territories: [
+         {},
+         {}
+    ]
+  }
+}
      */
     @PostMapping(path="newreleaseinfo/{gpid}", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> getNewReleasePayload(@RequestBody String payload, @PathVariable String gpid) {
